@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form — Clean & Responsive</title>
+
+  <style>
+    :root{
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --primary: #6366f1;
+      --danger: #ef4444;
+      --radius: 14px;
+      --shadow: 0 20px 35px -15px rgba(0,0,0,.4);
+      --space: clamp(14px, 2vw, 22px);
+      --fs-base: clamp(15px, 1.1vw, 17px);
+      --fs-title: clamp(24px, 4vw, 34px);
+      --transition: .18s ease;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      font-size: var(--fs-base);
+      display:flex;
+      min-height:100vh;
+      align-items:center;
+      justify-content:center;
+      padding: 32px 16px;
+    }
+
+    .wrapper{
+      width:100%;
+      max-width: 950px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.04);
+    }
+
+    header{
+      padding: 40px 32px 16px;
+      text-align:center;
+    }
+
+    header h1{
+      margin:0 0 8px;
+      font-size: var(--fs-title);
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    header p{
+      margin:0;
+      color: var(--muted);
+    }
+
+    form{
+      padding: 32px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: var(--space);
+    }
+
+    @media(min-width: 768px){
+      form{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .full{
+        grid-column: 1 / -1;
+      }
+    }
+
+    .field{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .input{
+      width:100%;
+      background: rgba(255,255,255,.03);
+      border: 1.2px solid rgba(255,255,255,.06);
+      border-radius: 10px;
+      color: var(--text);
+      padding: 20px 14px 14px;
+      font-size: 16px;
+      outline:none;
+      transition: border var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .input:focus{
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(99,102,241,.15);
+      background: rgba(255,255,255,.05);
+    }
+
+    textarea.input{
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    /* floating label */
+    .label{
+      position:absolute;
+      left:14px;
+      top:16px;
+      font-size: 14px;
+      color: var(--muted);
+      pointer-events:none;
+      transition: transform var(--transition), color var(--transition), font-size var(--transition), top var(--transition);
+      background: transparent;
+    }
+
+    .input:focus + .label,
+    .input:not(:placeholder-shown) + .label{
+      top:6px;
+      font-size: 12px;
+      color: var(--primary);
+    }
+
+    .error{
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .btn{
+      grid-column: 1 / -1;
+      border:none;
+      border-radius: 10px;
+      padding: 16px 20px;
+      background: var(--primary);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition: transform .08s ease, box-shadow var(--transition), opacity var(--transition);
+      box-shadow: 0 6px 16px -6px rgba(99,102,241,.5);
+    }
+
+    .btn:hover{ opacity: .95; }
+    .btn:active{ transform: scale(.99); }
+
+    .success{
+      display:none;
+      grid-column: 1 / -1;
+      background: rgba(34,197,94,.15);
+      color: #4ade80;
+      border: 1px solid rgba(34,197,94,.25);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: -8px;
+    }
+
+    .shake{
+      animation: shake .22s linear 0s 2;
+    }
+    @keyframes shake{
+      0%{transform: translateX(0);}
+      25%{transform: translateX(-4px);}
+      50%{transform: translateX(4px);}
+      75%{transform: translateX(-3px);}
+      100%{transform: translateX(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1>Contact Us</h1>
+      <p>Have a question? We'd love to hear from you.</p>
+    </header>
+
+    <form id="contactForm" novalidate>
+      <div class="success" id="successMsg">✅ Message sent successfully. We'll get back to you soon.</div>
+
+      <div class="field">
+        <input class="input" type="text" id="fullName" name="fullName" placeholder=" " autocomplete="name" />
+        <label class="label" for="fullName">Full Name</label>
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="field">
+        <input class="input" type="email" id="email" name="email" placeholder=" " autocomplete="email" />
+        <label class="label" for="email">Email Address</label>
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="field full">
+        <input class="input" type="text" id="subject" name="subject" placeholder=" " />
+        <label class="label" for="subject">Subject</label>
+        <div class="error" id="subjectError"></div>
+      </div>
+
+      <div class="field full">
+        <textarea class="input" id="message" name="message" placeholder=" "></textarea>
+        <label class="label" for="message">Message</label>
+        <div class="error" id="messageError"></div>
+      </div>
+
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+
+  const fields = {
+    fullName: {
+      el: document.getElementById('fullName'),
+      errorEl: document.getElementById('nameError'),
+      validate: v => v.length >= 3 || 'Full name must be at least 3 characters.'
+    },
+    email: {
+      el: document.getElementById('email'),
+      errorEl: document.getElementById('emailError'),
+      validate: v => !!v.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) || 'Please enter a valid email.'
+    },
+    subject: {
+      el: document.getElementById('subject'),
+      errorEl: document.getElementById('subjectError'),
+      validate: v => v.length >= 3 || 'Subject is required (min 3 chars).'
+    },
+    message: {
+      el: document.getElementById('message'),
+      errorEl: document.getElementById('messageError'),
+      validate: v => v.length >= 10 || 'Message should be at least 10 characters.'
+    }
+  };
+
+  // instant validation on blur
+  Object.values(fields).forEach(({ el, errorEl, validate }) => {
+    el.addEventListener('blur', () => {
+      const res = validate(el.value.trim());
+      errorEl.textContent = res === true ? '' : res;
+    });
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let valid = true;
+
+    Object.values(fields).forEach(({ el, errorEl, validate }) => {
+      const res = validate(el.value.trim());
+      errorEl.textContent = res === true ? '' : res;
+      if(res !== true) {
+        valid = false;
+        el.classList.add('shake');
+        setTimeout(()=> el.classList.remove('shake'), 400);
+      }
+    });
+
+    if(!valid) return;
+
+    // Simulate submit
+    successMsg.style.display = 'block';
+    form.reset();
+
+    // Hide after 5s
+    setTimeout(() => successMsg.style.display = 'none', 5000);
+  });
+</script>
+
+</body>
+</html>
