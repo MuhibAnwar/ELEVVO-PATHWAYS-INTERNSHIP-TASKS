@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; 
+        }
+     
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+  
+        .icon-svg {
+            width: 48px;
+            height: 48px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body class="bg-gray-300 text-gray-800">
+
+
+    <header class="bg-gradient-to-r from-gray-800 to-purple-800 text-white py-16 md:py-24 rounded-b-3xl shadow-lg">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">TaskFlow</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up">
+                Your Excel key to make your world efficient.
+            </p>
+            <button class="bg-white text-gray-800 hover:bg-blue-50 transition duration-300 ease-in-out px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Get Started
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="features" class="py-16 section-hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Unlock Your Productivity</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-2 text-center border border-gray-100">
+                    <div class="text-blue-500 mb-4 flex justify-center">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Task Management</h3>
+                    <p class="text-gray-600">Easily create, organize, and prioritize your tasks with a user-friendly interface designed for efficiency.</p>
+                </div>
+         
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-2 text-center border border-gray-100">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15L6 12l1.41-1.41L11 14.17l4.59-4.59L17 12l-6 6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Smart Reminders & Deadlines</h3>
+                    <p class="text-gray-600">Never miss a deadline again with customizable reminders and smart notifications.</p>
+                </div>
+          
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-2 text-center border border-gray-100">
+                    <div class="text-purple-500 mb-4 flex justify-center">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.55.84 2.72 1.94 3.29 2.45V19h3v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Cooperative Enronviment</h3>
+                    <p class="text-gray-600">Share tasks and projects with your team, fostering better communication and collective progress.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-16 bg-blue-50 rounded-3xl mt-12 section-hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">What Our Users Says</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-6">
+      
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-blue-100">
+                    <p class="text-lg italic text-gray-700 mb-4">"TaskFlow has revolutionized how I manage my daily tasks. It's incredibly intuitive and helps me stay on top of everything without feeling overwhelmed."</p>
+                    <p class="font-semibold text-blue-600">- Ahmed Alam, Small Business Owner</p>
+                </div>
+       
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-blue-100">
+                    <p class="text-lg italic text-gray-700 mb-4">"The collaboration features are a game-changer for our team. We're more organized and efficient than ever before. Highly recommend TaskFlow!"</p>
+                    <p class="font-semibold text-blue-600">- Munsif Anwar, Project Manager</p>
+                </div>
+            </div>
+        </section>
+
+     
+        <section id="pricing" class="py-16 section-hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Simple & Transparent Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+           
+                      <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Free</h3>
+                    <p class="text-5xl font-extrabold text-gray-800 mb-6">$0<span class="text-xl text-gray-500 font-medium">/month</span></p>
+                    <ul class="text-gray-700 text-left mb-8 space-y-2">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Up to 5 Tasks</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Basic Reminders</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Single User</li>
+                    </ul>
+                    <button class="bg-blue-100 text-gray-800 hover:bg-blue-200 transition duration-300 ease-in-out px-6 py-3 rounded-full font-semibold">
+                        Choose Free
+                    </button>
+                </div>
+            
+                <div class="bg-gray-800 text-white p-8 rounded-2xl shadow-lg transform scale-105 border border-blue-700 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                    <p class="text-5xl font-extrabold mb-6">$9<span class="text-xl opacity-80 font-medium">/month</span></p>
+                    <ul class="text-blue-100 text-left mb-8 space-y-2">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Unlimited Tasks</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Advanced Reminders</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Multi-device Sync</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Priority Support</li>
+                    </ul>
+                    <button class="bg-white text-gray-600 hover:bg-blue-50 transition duration-300 ease-in-out px-6 py-3 rounded-full font-semibold shadow-md">
+                        Go Pro
+                    </button>
+                </div>
+            
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Team</h3>
+                    <p class="text-5xl font-extrabold text-gray-800 mb-6">$29<span class="text-xl text-gray-500 font-medium">/month</span></p>
+                    <ul class="text-gray-700 text-left mb-8 space-y-2">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>All Pro Features</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Up to 10 Users</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Admin Controls</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Dedicated Support</li>
+                    </ul>
+                    <button class="bg-blue-100 text-gray-800 hover:bg-blue-200 transition duration-300 ease-in-out px-6 py-3 rounded-full font-semibold">
+                        Start Team Plan
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="bg-gray-800 text-white py-12 rounded-t-3xl">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold mb-4">TaskFlow</h3>
+                <p class="text-gray-400">&copy; 2025 TaskFlow. All rights reserved.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a>
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300">Support</a>
+            </div>
+            <div class="flex justify-center space-x-6">
+          
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 text-2xl">
+                
+                    <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h3V2h-3c-3.15 0-4 1.77-4 4v3.5H7v4h3V22h4v-8.5z"/></svg>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 text-2xl">
+               
+                    <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.76.85-2.75 1.05C18.18 4.62 17.04 4 15.79 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.1 5.4 7.57 3.4 5.09c-.36.62-.56 1.35-.56 2.13 0 1.49.75 2.81 1.91 3.56-.7-.02-1.37-.21-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.71 2.14 2.95 4.03 2.98-1.48 1.16-3.34 1.86-5.38 1.86-.35 0-.69-.02-1.03-.06C3.17 20.35 5.3 21 7.44 21c8.92 0 13.78-7.38 13.78-13.79 0-.21-.01-.42-.01-.63.95-.69 1.77-1.56 2.42-2.54z"/></svg>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 text-2xl">
+            
+                    <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8 17h3v-7H8v7zM9.5 8.25A1.25 1.25 0 118.25 7a1.25 1.25 0 011.25 1.25zM17 17h-3v-3.5c0-1.41-.67-2.09-1.5-2.09S11 12.09 11 13.5V17H8v-7h3v1.75c.81-1.18 2.06-1.75 3-1.75 2.25 0 4 1.5 4 4.25V17z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-hidden');
+
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('section-hidden');
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
